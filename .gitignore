@@ -17,13 +17,6 @@ reated by https://www.gitignore.io/api/macos,intellij,node,sublimetext,webstorm
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
-# Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
-
-# Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
-
 ## File-based project format:
 *.iws
 
@@ -87,6 +80,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build/
 
 # Runtime data
 pids
