@@ -1,22 +1,12 @@
-Success! Created learn-from-youtube at /Users/shuqiao/workspace/learn-from-youtube
-Inside that directory, you can run several commands:
+# Development
 
-  npm start
-    Starts the development server.
+1. To start the server locally run:
+	`npm start`
+1. To run the test suite run:
+	`npm test`
 
-  npm run build
-    Bundles the app into static files for production.
+# Deployment
 
-  npm test
-    Starts the test runner.
+1. To deploy to CF, use the deploy.sh script which will build and deploy
+	`./deploy.sh`
 
-  npm run eject
-    Removes this tool and copies build dependencies, configuration files
-    and scripts into the app directory. If you do this, you can’t go back!
-
-We suggest that you begin by typing:
-
-  cd learn-from-youtube
-  npm start
-
-Happy hacking!
