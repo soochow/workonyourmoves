@@ -9,7 +9,7 @@ class App extends Component {
           <h2>Welcome to Learn from Youtube</h2>
         </div>
         <p className="App-intro">
-          LOOK AT THIS ADORABLE TINY DOG VIDEO!!!
+          LOOK AT THIS ADORABLE TINY PUPPY VIDEO!!!
         </p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/GYrN1f6jGuk" frameborder="0" allowfullscreen></iframe>
       </div>
