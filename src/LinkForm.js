@@ -14,8 +14,7 @@ class LinkForm extends Component {
   }
 
   handleSubmit(event) {
-    alert('A url was submitted: ' + this.state.value);
-    event.preventDefault();
+    this.props.onUrlSubmitted(this.state.value);
   }
 
   render() {
