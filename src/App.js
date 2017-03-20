@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LinkForm from './LinkForm';
+import VideoContainer from './VideoContainer';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
           LOOK AT THIS ADORABLE TINY PUPPY VIDEO!!!
         </p>
         <LinkForm/>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/GYrN1f6jGuk" frameborder="0" allowfullscreen></iframe>
+        <VideoContainer/>
       </div>
     );
   }
