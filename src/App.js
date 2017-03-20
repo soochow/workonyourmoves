@@ -8,7 +8,6 @@ class App extends Component {
   handleUrl(url) {
     alert('A URL was submitted: ' + url);
     event.preventDefault();
-
   }
 
   render() {

@@ -14,7 +14,9 @@ class LinkForm extends Component {
   }
 
   handleSubmit(event) {
-    this.props.onUrlSubmitted(this.state.value);
+    if(undefined!=this.props.onUrlSubmitted && typeof this.props.onUrlSubmitted=="function"){
+      this.props.onUrlSubmitted(this.state.value);
+    }
   }
 
   render() {
