@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import LinkForm from './LinkForm';
+import VideoForm from './VideoForm';
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
         <p className="App-intro">
           Paste in an embeddable youtube link to play it below!!!
         </p>
-        <LinkForm url="https://www.youtube.com/embed/6peHtgK0-tM" />
+        <VideoForm url="https://www.youtube.com/embed/6peHtgK0-tM" />
       </div>
     );
   }

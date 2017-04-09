@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class LinkForm extends Component {
+class VideoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,4 +38,4 @@ class LinkForm extends Component {
   }
 }
 
-export default LinkForm;
+export default VideoForm;
