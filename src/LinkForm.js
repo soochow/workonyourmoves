@@ -3,31 +3,37 @@ import React, { Component } from 'react';
 class LinkForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      videoUrl: props.url,
+      typedUrl: props.url
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({typedUrl: event.target.value});
   }
 
   handleSubmit(event) {
-    if(undefined!=this.props.onUrlSubmitted && typeof this.props.onUrlSubmitted=="function"){
-      this.props.onUrlSubmitted(this.state.value);
-    }
+    event.preventDefault();
+    this.setState({videoUrl: this.state.typedUrl});
   }
 
   render() {
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
         <label>
           URL:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" value={this.state.typedUrl} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Load" />
       </form>
+      <p> </p>
+      <iframe width="560" height="315" src={this.state.videoUrl} frameborder="0" allowfullscreen></iframe>
+      </div>
     );
   }
 }
