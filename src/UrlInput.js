@@ -30,6 +30,7 @@ class UrlInput extends Component {
                 />
 
                 <input
+                    className="Url-submit"
                     type="submit"
                     value="Load"
                 />

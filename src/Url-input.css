@@ -6,3 +6,11 @@
     box-sizing: border-box;
     border: ridge;
 }
+
+.Url-submit {
+    /*color: #fff;*/
+    font-size: medium;
+    width: 100px;
+    height: 35px;
+    border: outset;
+}
