@@ -8,16 +8,3 @@
     padding: 20px;
     color: white;
 }
-
-.App-intro {
-    font-size: large;
-}
-
-.Url-input {
-    font-size: small;
-    width: 500px;
-    padding: 8px 5px;
-    margin: 12px 10px;
-    box-sizing: border-box;
-    border: ridge;
-}

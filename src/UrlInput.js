@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Url-input.css';
 
 class UrlInput extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class UrlInput extends Component {
                     className="Url-input"
                     type="text"
                     width="999"
-                    placeholder="Enter YouTube embedded video URL"
+                    placeholder="Enter YouTube video URL"
                     value={this.props.url}
                     onChange={this.handleUrlInputChange}
                 />
