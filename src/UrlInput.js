@@ -4,6 +4,7 @@ import './Url-input.css';
 class UrlInput extends Component {
     constructor(props) {
         super(props);
+
         this.handleUrlInputChange = this.handleUrlInputChange.bind(this);
         this.handleUrlSubmit = this.handleUrlSubmit.bind(this);
     }
@@ -23,7 +24,6 @@ class UrlInput extends Component {
                 <input
                     className="Url-input"
                     type="text"
-                    width="999"
                     placeholder="Enter YouTube video URL"
                     value={this.props.url}
                     onChange={this.handleUrlInputChange}

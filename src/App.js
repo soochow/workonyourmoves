@@ -2,29 +2,58 @@ import React, { Component } from 'react';
 import './App.css';
 import VideoContainer from './VideoContainer';
 import UrlInput from "./UrlInput";
+import VideoPlaybackControls from "./VideoPlaybackControls";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            typedUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
-            selectedUrl: 'https://www.youtube.com/embed/6peHtgK0-tM'
+            enteredUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
+            selectedUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
+
+            enteredStartTime: '',
+            enteredEndTime: '',
+            selectedStartTime: '',
+            selectedEndTime: ''
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
         this.handleUrlSelection = this.handleUrlSelection.bind(this);
+
+        this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
+        this.handleEndTimeChange = this.handleEndTimeChange.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
     }
 
     handleUrlInput(url) {
         this.setState({
-            typedUrl: url
+            enteredUrl: url
         });
     }
 
     handleUrlSelection() {
         this.setState({
-            selectedUrl: this.state.typedUrl
+            selectedUrl: this.state.enteredUrl
         });
+    }
+
+    handleStartTimeChange(start) {
+        this.setState({
+            enteredStartTime: start
+        })
+    }
+
+    handleEndTimeChange(end) {
+        this.setState({
+            enteredEndTime: end
+        })
+    }
+
+    handlePlay() {
+        this.setState({
+            selectedStartTime: this.state.enteredStartTime,
+            selectedEndTime: this.state.enteredEndTime
+        })
     }
 
     render() {
@@ -34,12 +63,21 @@ class App extends Component {
                     <h2>Welcome to Learn from YouTube</h2>
                 </div>
                 <UrlInput
-                    url={this.state.typedUrl}
+                    url={this.state.enteredUrl}
                     onUrlInputChange={this.handleUrlInput}
                     onUrlSelected={this.handleUrlSelection}
                 />
                 <VideoContainer
                     url={this.state.selectedUrl}
+                    start={this.state.selectedStartTime}
+                    end={this.state.selectedEndTime}
+                />
+                <VideoPlaybackControls
+                    start={this.state.enteredStartTime}
+                    end={this.state.enteredEndTime}
+                    onStartInputChange={this.handleStartTimeChange}
+                    onEndInputChange={this.handleEndTimeChange}
+                    onPlay={this.handlePlay}
                 />
             </div>
         );
