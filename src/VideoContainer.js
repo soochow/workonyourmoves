@@ -11,8 +11,8 @@ class VideoContainer extends Component {
     render() {
         return (
             <YouTube
-                videoId = {this.parse(this.props.url)}
-                opts = {{
+                videoId={this.parse(this.props.url)}
+                opts={{
                     height: '390',
                     width: '640',
                     playerVars: {
