@@ -1,28 +1,44 @@
 import React, { Component } from 'react';
+import YouTube from 'react-youtube';
 
 class VideoContainer extends Component {
+    constructor(props) {
+        super(props);
+
+        this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
+    }
+
     render() {
         return (
-            <iframe
-                width="560"
-                height="315"
-                src={this.buildEmbeddedUrl(this.props.url, this.props.start, this.props.end)}
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+            <YouTube
+                videoId = {this.parse(this.props.url)}
+                opts = {{
+                    height: '390',
+                    width: '640',
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 0,
+                        modestbranding: 1,
+                        disablekb: 1,
+                        rel: 0,
+                        showinfo: 0,
+                        start: this.props.start,
+                        end: this.props.end,
+                        loop: this.props.loop
+                    }
+                }}
+                onStateChange={this.onPlayerStateChange}
+            />
         );
     }
 
-    buildEmbeddedUrl(url, startTime, endTime) {
-        const defaultPlayerParameters = "?showinfo=0&modestbranding=1&rel=0&disablekb=1&controls=1&autoplay=1";
-        const baseYouTubeUrl = "https://www.youtube.com/embed/";
+    onPlayerStateChange(event) {
+        let playerStatus = event.data;
+        let player = event.target;
 
-        let videoId = this.parse(url);
-
-        let start = "&start=" + startTime;
-        let end = "&end=" + endTime;
-
-        return baseYouTubeUrl + videoId + defaultPlayerParameters + start + end;
+        if (playerStatus === 0 && this.props.loop === true) { // ended
+            player.seekTo(this.props.start, true);
+        }
     }
 
     parse(url) {
@@ -31,7 +47,6 @@ class VideoContainer extends Component {
 
         return (match && match[7].length === 11) ? match[7] : "dQw4w9WgXcQ";
     }
-
 }
 
 export default VideoContainer;

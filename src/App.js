@@ -12,9 +12,13 @@ class App extends Component {
             selectedUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
 
             enteredStartTime: '',
-            enteredEndTime: '',
             selectedStartTime: '',
-            selectedEndTime: ''
+
+            enteredEndTime: '',
+            selectedEndTime: '',
+
+            enteredLoop: false,
+            selectedLoop: false
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
@@ -22,6 +26,7 @@ class App extends Component {
 
         this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
         this.handleEndTimeChange = this.handleEndTimeChange.bind(this);
+        this.handleLoopChange = this.handleLoopChange.bind(this);
         this.handlePlay = this.handlePlay.bind(this);
     }
 
@@ -49,10 +54,17 @@ class App extends Component {
         })
     }
 
+    handleLoopChange(checked) {
+        this.setState({
+            enteredLoop: checked
+        })
+    }
+
     handlePlay() {
         this.setState({
             selectedStartTime: this.state.enteredStartTime,
-            selectedEndTime: this.state.enteredEndTime
+            selectedEndTime: this.state.enteredEndTime,
+            selectedLoop: this.state.enteredLoop
         })
     }
 
@@ -71,12 +83,16 @@ class App extends Component {
                     url={this.state.selectedUrl}
                     start={this.state.selectedStartTime}
                     end={this.state.selectedEndTime}
+                    loop={this.state.selectedLoop}
                 />
                 <VideoPlaybackControls
                     start={this.state.enteredStartTime}
                     end={this.state.enteredEndTime}
+                    loop={this.state.enteredLoop}
+
                     onStartInputChange={this.handleStartTimeChange}
                     onEndInputChange={this.handleEndTimeChange}
+                    onLoopInputChange={this.handleLoopChange}
                     onPlay={this.handlePlay}
                 />
             </div>

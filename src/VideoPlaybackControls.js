@@ -6,6 +6,9 @@ class VideoPlaybackControls extends Component {
 
         this.handleStartInputChange = this.handleStartInputChange.bind(this);
         this.handleEndInputChange = this.handleEndInputChange.bind(this);
+
+        this.handleLoopChange = this.handleLoopChange.bind(this);
+
         this.handlePlay = this.handlePlay.bind(this);
     }
 
@@ -15,6 +18,10 @@ class VideoPlaybackControls extends Component {
 
     handleEndInputChange(e) {
         this.props.onEndInputChange(e.target.value);
+    }
+
+    handleLoopChange(e) {
+        this.props.onLoopInputChange(e.target.checked)
     }
 
     handlePlay(e) {
@@ -37,9 +44,12 @@ class VideoPlaybackControls extends Component {
                     value={this.props.end}
                     onChange={this.handleEndInputChange}
                 />
+
+                <input type="checkbox" value="loop" checked={this.props.loop} onChange={this.handleLoopChange} /> Loop
+
                 <input
                     type="submit"
-                    value="Play"
+                    value="Set"
                 />
             </form>
         );
