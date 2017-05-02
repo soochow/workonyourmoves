@@ -18,7 +18,10 @@ class App extends Component {
             selectedEndTime: '',
 
             enteredLoop: false,
-            selectedLoop: false
+            selectedLoop: false,
+
+            enteredRate: false,
+            selectedRate: false,
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
@@ -27,6 +30,7 @@ class App extends Component {
         this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
         this.handleEndTimeChange = this.handleEndTimeChange.bind(this);
         this.handleLoopChange = this.handleLoopChange.bind(this);
+        this.handleRateChange = this.handleRateChange.bind(this);
         this.handlePlay = this.handlePlay.bind(this);
     }
 
@@ -60,11 +64,18 @@ class App extends Component {
         })
     }
 
+    handleRateChange(checked) {
+        this.setState({
+            enteredRate: checked
+        })
+    }
+
     handlePlay() {
         this.setState({
             selectedStartTime: this.state.enteredStartTime,
             selectedEndTime: this.state.enteredEndTime,
-            selectedLoop: this.state.enteredLoop
+            selectedLoop: this.state.enteredLoop,
+            selectedRate: this.state.enteredRate
         })
     }
 
@@ -84,15 +95,18 @@ class App extends Component {
                     start={this.state.selectedStartTime}
                     end={this.state.selectedEndTime}
                     loop={this.state.selectedLoop}
+                    rate={this.state.selectedRate}
                 />
                 <VideoPlaybackControls
                     start={this.state.enteredStartTime}
                     end={this.state.enteredEndTime}
                     loop={this.state.enteredLoop}
+                    rate={this.state.enteredRate}
 
                     onStartInputChange={this.handleStartTimeChange}
                     onEndInputChange={this.handleEndTimeChange}
                     onLoopInputChange={this.handleLoopChange}
+                    onRateInputChange={this.handleRateChange}
                     onPlay={this.handlePlay}
                 />
             </div>

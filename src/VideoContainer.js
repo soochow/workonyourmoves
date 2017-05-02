@@ -5,6 +5,7 @@ class VideoContainer extends Component {
     constructor(props) {
         super(props);
 
+        this.onPlayerReady = this.onPlayerReady.bind(this);
         this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
     }
 
@@ -24,12 +25,20 @@ class VideoContainer extends Component {
                         showinfo: 0,
                         start: this.props.start,
                         end: this.props.end,
-                        loop: this.props.loop
+                        loop: this.props.loop,
+                        playbackRate: this.props.rate
                     }
                 }}
+                onReady={this.onPlayerReady}
                 onStateChange={this.onPlayerStateChange}
             />
         );
+    }
+
+    onPlayerReady(event) {
+        let player = event.target;
+
+        player.setPlaybackRate(this.props.rate === false ? 1 : 0.5);
     }
 
     onPlayerStateChange(event) {
