@@ -18,7 +18,7 @@ class VideoContainer extends Component {
                     width: '640',
                     playerVars: {
                         autoplay: 1,
-                        controls: 0,
+                        controls: 1,
                         modestbranding: 1,
                         disablekb: 1,
                         rel: 0,
