@@ -5,8 +5,18 @@ class VideoContainer extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {height: 390};
+
         this.onPlayerReady = this.onPlayerReady.bind(this);
         this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
+    }
+
+    updateHeight() {
+        this.setState({ height: window.innerHeight - 170 + 'px' });
+    }
+
+    componentWillMount() {
+        this.updateHeight();
     }
 
     render() {
@@ -14,8 +24,8 @@ class VideoContainer extends Component {
             <YouTube
                 videoId={this.parse(this.props.url)}
                 opts={{
-                    height: '390',
-                    width: '640',
+                    height: this.state.height,
+                    width: '75%',
                     playerVars: {
                         autoplay: 1,
                         controls: 1,
