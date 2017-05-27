@@ -20,8 +20,8 @@ class App extends Component {
             enteredLoop: false,
             selectedLoop: false,
 
-            enteredRate: false,
-            selectedRate: false,
+            enteredRate: 1.0,
+            selectedRate: 1.0,
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
@@ -85,11 +85,13 @@ class App extends Component {
                 <div className="App-header">
                     <h2>Welcome to Learn from YouTube</h2>
                 </div>
+
                 <UrlInput
                     url={this.state.enteredUrl}
                     onUrlInputChange={this.handleUrlInput}
                     onUrlSelected={this.handleUrlSelection}
                 />
+
                 <VideoContainer
                     url={this.state.selectedUrl}
                     start={this.state.selectedStartTime}
@@ -97,6 +99,7 @@ class App extends Component {
                     loop={this.state.selectedLoop}
                     rate={this.state.selectedRate}
                 />
+
                 <VideoPlaybackControls
                     start={this.state.enteredStartTime}
                     end={this.state.enteredEndTime}

@@ -12,7 +12,7 @@ class VideoContainer extends Component {
     }
 
     updateHeight() {
-        this.setState({ height: window.innerHeight - 170 + 'px' });
+        this.setState({ height: window.innerHeight - 220 + 'px' });
     }
 
     componentWillMount() {
@@ -22,7 +22,7 @@ class VideoContainer extends Component {
     render() {
         return (
             <YouTube
-                videoId={this.parse(this.props.url)}
+                videoId={VideoContainer.parse(this.props.url)}
                 opts={{
                     height: this.state.height,
                     width: '75%',
@@ -48,7 +48,7 @@ class VideoContainer extends Component {
     onPlayerReady(event) {
         let player = event.target;
 
-        player.setPlaybackRate(this.props.rate === false ? 1 : 0.5);
+        player.setPlaybackRate(this.props.rate);
     }
 
     onPlayerStateChange(event) {
@@ -60,7 +60,7 @@ class VideoContainer extends Component {
         }
     }
 
-    parse(url) {
+    static parse(url) {
         let regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
         let match = url.match(regExp);
 
