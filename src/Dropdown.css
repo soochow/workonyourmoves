@@ -98,6 +98,6 @@ table {
     margin-right:auto;
 }
 
-td {
+td.topAlign {
     vertical-align: top;
 }

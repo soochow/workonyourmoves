@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Url-input.css';
+import React, {Component} from 'react';
+import './input.css';
 
 class UrlInput extends Component {
     constructor(props) {
@@ -20,21 +20,29 @@ class UrlInput extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleUrlSubmit}>
-                <input
-                    className="Url-input"
-                    type="text"
-                    placeholder="Enter YouTube video URL"
-                    value={this.props.url}
-                    onChange={this.handleUrlInputChange}
-                />
+            <table>
+                <tr>
+                    <td>
+                        <input
+                            className="url-input"
+                            type="text"
+                            placeholder="Enter YouTube video URL"
+                            value={this.props.url}
+                            onChange={this.handleUrlInputChange}
+                        />
+                    </td>
 
-                <input
-                    className="Url-submit"
-                    type="submit"
-                    value="Load"
-                />
-            </form>
+                    <td>
+                        <form onSubmit={this.handleUrlSubmit}>
+                            <input
+                                className="Url-submit"
+                                type="submit"
+                                value="Load"
+                            />
+                        </form>
+                    </td>
+                </tr>
+            </table>
         );
     }
 }

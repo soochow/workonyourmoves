@@ -89,25 +89,27 @@ class VideoPlaybackControls extends Component {
         return (
             <table>
                 <tr>
-                    <td>
+                    <td className="topAlign">
                         <input
-                            type="videoTime"
+                            className="time"
+                            type="text"
                             placeholder="Start time (m:ss)"
                             value={this.props.start}
                             onChange={this.handleStartInputChange}
                         />&nbsp;&nbsp;&nbsp;
                     </td>
 
-                    <td>
+                    <td className="topAlign">
                         <input
-                            type="videoTime"
+                            className="time"
+                            type="text"
                             placeholder="End time (m:ss)"
                             value={this.props.end}
                             onChange={this.handleEndInputChange}
                         />&nbsp;&nbsp;&nbsp;
                     </td>
 
-                    <td>
+                    <td className="topAlign">
                         <input
                             type="checkbox"
                             value="loop"
@@ -116,11 +118,11 @@ class VideoPlaybackControls extends Component {
                         />Loop &nbsp;&nbsp;&nbsp;
                     </td>
 
-                    <td>
+                    <td className="topAlign">
                         Playback Rate &nbsp;&nbsp;&nbsp;
                     </td>
 
-                    <td>
+                    <td className="topAlign">
                         <Dropdown
                             options={playbackRateOptions}
                             onChange={this.handleRateChange}
@@ -129,7 +131,7 @@ class VideoPlaybackControls extends Component {
                     </td>
 
                     &nbsp;&nbsp;&nbsp;
-                    <td>
+                    <td className="topAlign">
                         <form onSubmit={this.handlePlay}>
                             <input
                                 type="submit"

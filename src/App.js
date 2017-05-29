@@ -83,7 +83,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <h2>Welcome to Learn from YouTube</h2>
+                    <h2>Learn from YouTube</h2>
                 </div>
 
                 <UrlInput
