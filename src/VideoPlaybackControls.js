@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
+import './input.css';
 import './Dropdown.css';
 
 const playbackRateOptions = [
@@ -90,7 +91,7 @@ class VideoPlaybackControls extends Component {
                 <tr>
                     <td>
                         <input
-                            type="text"
+                            type="videoTime"
                             placeholder="Start time (m:ss)"
                             value={this.props.start}
                             onChange={this.handleStartInputChange}
@@ -99,7 +100,7 @@ class VideoPlaybackControls extends Component {
 
                     <td>
                         <input
-                            type="text"
+                            type="videoTime"
                             placeholder="End time (m:ss)"
                             value={this.props.end}
                             onChange={this.handleEndInputChange}
