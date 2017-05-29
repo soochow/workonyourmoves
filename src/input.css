@@ -1,4 +1,4 @@
-input.time, input.url-input {
+.inputField {
     display: block;
     margin: 0;
     font-family: sans-serif;
@@ -9,20 +9,13 @@ input.time, input.url-input {
     transition: box-shadow 0.3s, border 0.3s;
 }
 
-input.time:focus, input.url-input:focus {
+.inputField:focus {
     border: solid 1px #707070;
     box-shadow: 0 0 5px 1px #969696;
     outline: none;
 }
 
-input.url-input {
+.urlInput {
     width: 500px;
     margin: 12px 10px;
-}
-
-.Url-submit {
-    font-size: medium;
-    width: 100px;
-    height: 35px;
-    border: outset;
 }

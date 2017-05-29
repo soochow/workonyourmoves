@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
+import './button.css';
 import './input.css';
 import './Dropdown.css';
 
@@ -91,7 +92,7 @@ class VideoPlaybackControls extends Component {
                 <tr>
                     <td className="topAlign">
                         <input
-                            className="time"
+                            className="inputField"
                             type="text"
                             placeholder="Start time (m:ss)"
                             value={this.props.start}
@@ -101,7 +102,7 @@ class VideoPlaybackControls extends Component {
 
                     <td className="topAlign">
                         <input
-                            className="time"
+                            className="inputField"
                             type="text"
                             placeholder="End time (m:ss)"
                             value={this.props.end}
@@ -134,6 +135,7 @@ class VideoPlaybackControls extends Component {
                     <td className="topAlign">
                         <form onSubmit={this.handlePlay}>
                             <input
+                                className="button setPlayback"
                                 type="submit"
                                 value="Set"
                             />

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './button.css';
 import './input.css';
 
 class UrlInput extends Component {
@@ -24,7 +25,7 @@ class UrlInput extends Component {
                 <tr>
                     <td>
                         <input
-                            className="url-input"
+                            className="inputField urlInput"
                             type="text"
                             placeholder="Enter YouTube video URL"
                             value={this.props.url}
@@ -35,7 +36,7 @@ class UrlInput extends Component {
                     <td>
                         <form onSubmit={this.handleUrlSubmit}>
                             <input
-                                className="Url-submit"
+                                className="button urlSubmit"
                                 type="submit"
                                 value="Load"
                             />

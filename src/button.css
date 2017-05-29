@@ -1,0 +1,27 @@
+.button {
+    background-color: #e7e7e7;
+    color: black;
+    text-align: center;
+    text-decoration: dashed;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #222;
+    color: white;
+}
+
+.urlSubmit {
+    width: 100px;
+    height: 35px;
+}
+
+.setPlayback {
+    width: 70px;
+    height: 35px;
+}
