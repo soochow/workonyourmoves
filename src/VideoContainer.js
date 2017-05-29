@@ -33,8 +33,8 @@ class VideoContainer extends Component {
                         disablekb: 1,
                         rel: 0,
                         showinfo: 0,
-                        start: this.props.start,
-                        end: this.props.end,
+                        start: VideoContainer.hmsToSeconds(this.props.start),
+                        end: VideoContainer.hmsToSeconds(this.props.end),
                         loop: this.props.loop,
                         playbackRate: this.props.rate
                     }
@@ -56,7 +56,7 @@ class VideoContainer extends Component {
         let player = event.target;
 
         if (playerStatus === 0 && this.props.loop === true) { // ended
-            player.seekTo(this.props.start, true);
+            player.seekTo(VideoContainer.hmsToSeconds(this.props.start), true);
         }
     }
 
@@ -65,6 +65,22 @@ class VideoContainer extends Component {
         let match = url.match(regExp);
 
         return (match && match[7].length === 11) ? match[7] : "dQw4w9WgXcQ";
+    }
+
+    static hmsToSeconds(str) {
+        if (str.length === 0) {
+            return str;
+        }
+
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
     }
 }
 

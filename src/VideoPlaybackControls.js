@@ -8,6 +8,8 @@ const playbackRateOptions = [
     {value: 2.0, label: '2.x'}
 ];
 
+const videoTimestampRegex = /^$|[0-9]+:[0-9]{2}/;
+
 class VideoPlaybackControls extends Component {
     constructor(props) {
         super(props);
@@ -39,8 +41,18 @@ class VideoPlaybackControls extends Component {
     }
 
     handlePlay(e) {
-        this.props.onPlay();
         e.preventDefault();
+
+        if (!videoTimestampRegex.test(this.props.start)) {
+            alert('Please enter a valid start time in format m:ss');
+            return;
+        }
+        else if (!videoTimestampRegex.test(this.props.end)) {
+            alert('Please enter a valid end time in format m:ss');
+            return;
+        }
+
+        this.props.onPlay();
     }
 
     static currentPlaybackRate(rateValue) {
@@ -78,8 +90,8 @@ class VideoPlaybackControls extends Component {
                 <tr>
                     <td>
                         <input
-                            type="number"
-                            placeholder="Start time seconds"
+                            type="text"
+                            placeholder="Start time (m:ss)"
                             value={this.props.start}
                             onChange={this.handleStartInputChange}
                         />&nbsp;&nbsp;&nbsp;
@@ -87,8 +99,8 @@ class VideoPlaybackControls extends Component {
 
                     <td>
                         <input
-                            type="number"
-                            placeholder="End time seconds"
+                            type="text"
+                            placeholder="End time (m:ss)"
                             value={this.props.end}
                             onChange={this.handleEndInputChange}
                         />&nbsp;&nbsp;&nbsp;
