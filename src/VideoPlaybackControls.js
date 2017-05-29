@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
+import Checkbox from 'react-mdc-web/lib/Checkbox';
+import FormField from 'react-mdc-web/lib/FormField';
+
 import './button.css';
 import './input.css';
 import './Dropdown.css';
@@ -89,6 +92,7 @@ class VideoPlaybackControls extends Component {
     render() {
         return (
             <table>
+                <tbody>
                 <tr>
                     <td className="topAlign">
                         <input
@@ -111,27 +115,27 @@ class VideoPlaybackControls extends Component {
                     </td>
 
                     <td className="topAlign">
-                        <input
-                            type="checkbox"
-                            value="loop"
-                            checked={this.props.loop}
-                            onChange={this.handleLoopChange}
-                        />Loop &nbsp;&nbsp;&nbsp;
+                        <FormField id="loop-checkbox">
+                            <Checkbox
+                                onChange={this.handleLoopChange}
+                                checked={this.props.loop}
+                            />
+                            <label>Loop&nbsp;&nbsp;</label>
+                        </FormField>
                     </td>
 
                     <td className="topAlign">
-                        Playback Rate &nbsp;&nbsp;&nbsp;
+                        <FormField>
+                            <Dropdown
+                                options={playbackRateOptions}
+                                onChange={this.handleRateChange}
+                                value={VideoPlaybackControls.currentPlaybackRate(this.props.rate)}
+                            />
+                            <label>Speed&nbsp;&nbsp;</label>
+                        </FormField>
+
                     </td>
 
-                    <td className="topAlign">
-                        <Dropdown
-                            options={playbackRateOptions}
-                            onChange={this.handleRateChange}
-                            value={VideoPlaybackControls.currentPlaybackRate(this.props.rate)}
-                        />
-                    </td>
-
-                    &nbsp;&nbsp;&nbsp;
                     <td className="topAlign">
                         <form onSubmit={this.handlePlay}>
                             <input
@@ -142,6 +146,7 @@ class VideoPlaybackControls extends Component {
                         </form>
                     </td>
                 </tr>
+                </tbody>
             </table>
         );
     }

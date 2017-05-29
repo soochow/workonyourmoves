@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
 import './button.css';
 import './input.css';
 
@@ -22,6 +23,7 @@ class UrlInput extends Component {
     render() {
         return (
             <table>
+                <tbody>
                 <tr>
                     <td>
                         <input
@@ -43,6 +45,7 @@ class UrlInput extends Component {
                         </form>
                     </td>
                 </tr>
+                </tbody>
             </table>
         );
     }
