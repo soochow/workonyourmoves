@@ -5,8 +5,8 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-dropdown": "^1.2.3",
     "react-mdc-web": "^0.12.2",
+    "react-mdl-extra": "^1.4.3",
     "react-youtube": "^7.4.0"
   },
   "devDependencies": {

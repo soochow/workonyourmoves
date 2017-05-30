@@ -64,9 +64,9 @@ class App extends Component {
         })
     }
 
-    handleRateChange(checked) {
+    handleRateChange(rate) {
         this.setState({
-            enteredRate: checked
+            enteredRate: rate
         })
     }
 

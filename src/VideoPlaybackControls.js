@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Dropdown from 'react-dropdown';
 import { Button, Checkbox, FormField, Textfield } from 'react-mdc-web';
+import { Menu, MenuItem } from 'react-mdl-extra';
 
 import './button.css';
 import './input.css';
@@ -23,8 +23,6 @@ class VideoPlaybackControls extends Component {
 
         this.handleLoopChange = this.handleLoopChange.bind(this);
 
-        this.handleRateChange = this.handleRateChange.bind(this);
-
         this.handlePlay = this.handlePlay.bind(this);
     }
 
@@ -38,10 +36,6 @@ class VideoPlaybackControls extends Component {
 
     handleLoopChange(e) {
         this.props.onLoopInputChange(e.target.checked);
-    }
-
-    handleRateChange(rateOption) {
-        this.props.onRateInputChange(rateOption.value);
     }
 
     handlePlay(e) {
@@ -108,17 +102,17 @@ class VideoPlaybackControls extends Component {
                         onChange={this.handleLoopChange}
                         checked={this.props.loop}
                     />
-                    <label>Loop&nbsp;&nbsp;</label>
+                    <label>Loop&nbsp;&nbsp;&nbsp;</label>
                 </FormField>
 
-                <FormField id="speed-dropdown">
-                    <Dropdown
-                        options={playbackRateOptions}
-                        onChange={this.handleRateChange}
-                        value={VideoPlaybackControls.currentPlaybackRate(this.props.rate)}
-                    />
-                    <label>Speed&nbsp;&nbsp;</label>
-                </FormField>
+                <Menu
+                    target={<Button raised>Speed {VideoPlaybackControls.currentPlaybackRate(this.props.rate).label}</Button>}
+                    align="tl bl"
+                >
+                    <MenuItem onClick={() => this.props.onRateInputChange(0.5)}>.5x</MenuItem>
+                    <MenuItem onClick={() => this.props.onRateInputChange(1.0)}>1.0x</MenuItem>
+                    <MenuItem onClick={() => this.props.onRateInputChange(2.0)}>2.0x</MenuItem>
+                </Menu>&nbsp;&nbsp;&nbsp;
 
                 <Button
                     raised
