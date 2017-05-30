@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import VideoContainer from './VideoContainer';
 import UrlInput from "./UrlInput";
+import VideoContainer from './VideoContainer';
 import VideoPlaybackControls from "./VideoPlaybackControls";
+
+import './App.css';
 
 class App extends Component {
     constructor(props) {

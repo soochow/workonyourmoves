@@ -3,8 +3,6 @@ import { Button, Checkbox, FormField, Textfield } from 'react-mdc-web';
 import { Menu, MenuItem } from 'react-mdl-extra';
 
 import './button.css';
-import './input.css';
-import './Dropdown.css';
 
 const playbackRateOptions = [
     {value: 0.5, label: '.5x'},
