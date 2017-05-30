@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'react-mdc-web/lib/Button';
-
-import './button.css';
-import './input.css';
+import { Button, Textfield } from 'react-mdc-web';
 
 class UrlInput extends Component {
     constructor(props) {
@@ -23,30 +20,20 @@ class UrlInput extends Component {
 
     render() {
         return (
-            <table>
-                <tbody>
-                <tr>
-                    <td>
-                        <input
-                            className="inputField urlInput"
-                            type="text"
-                            placeholder="Enter YouTube video URL"
-                            value={this.props.url}
-                            onChange={this.handleUrlInputChange}
-                        />
-                    </td>
-
-                    <td>
-                        <Button
-                            raised
-                            onClick={this.handleUrlSubmit}
-                        >
-                            Load
-                        </Button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div>
+                <Textfield
+                    style={{ width: "600px" }}
+                    floatingLabel="YouTube video URL"
+                    value={this.props.url}
+                    onChange={this.handleUrlInputChange}
+                />&nbsp;&nbsp;&nbsp;
+                <Button
+                    raised
+                    onClick={this.handleUrlSubmit}
+                >
+                    Load
+                </Button>
+            </div>
         );
     }
 }

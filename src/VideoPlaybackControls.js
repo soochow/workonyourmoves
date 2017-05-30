@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
-import Button from 'react-mdc-web/lib/Button';
-import Checkbox from 'react-mdc-web/lib/Checkbox';
-import FormField from 'react-mdc-web/lib/FormField';
+import { Button, Checkbox, FormField } from 'react-mdc-web';
 
 import './button.css';
 import './input.css';
