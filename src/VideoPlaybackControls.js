@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
-import { Button, Checkbox, FormField } from 'react-mdc-web';
+import { Button, Checkbox, FormField, Textfield } from 'react-mdc-web';
 
 import './button.css';
 import './input.css';
@@ -90,61 +90,43 @@ class VideoPlaybackControls extends Component {
 
     render() {
         return (
-            <table>
-                <tbody>
-                <tr>
-                    <td className="topAlign">
-                        <input
-                            className="inputField"
-                            type="text"
-                            placeholder="Start time (m:ss)"
-                            value={this.props.start}
-                            onChange={this.handleStartInputChange}
-                        />&nbsp;&nbsp;&nbsp;
-                    </td>
+            <div>
+                <Textfield
+                    floatingLabel="Start time (m:ss)"
+                    value={this.props.start}
+                    onChange={this.handleStartInputChange}
+                />&nbsp;&nbsp;&nbsp;
 
-                    <td className="topAlign">
-                        <input
-                            className="inputField"
-                            type="text"
-                            placeholder="End time (m:ss)"
-                            value={this.props.end}
-                            onChange={this.handleEndInputChange}
-                        />&nbsp;&nbsp;&nbsp;
-                    </td>
+                <Textfield
+                    floatingLabel="End time (m:ss)"
+                    value={this.props.end}
+                    onChange={this.handleEndInputChange}
+                />&nbsp;&nbsp;&nbsp;
 
-                    <td className="topAlign">
-                        <FormField id="loop-checkbox">
-                            <Checkbox
-                                onChange={this.handleLoopChange}
-                                checked={this.props.loop}
-                            />
-                            <label>Loop&nbsp;&nbsp;</label>
-                        </FormField>
-                    </td>
+                <FormField id="loop-checkbox">
+                    <Checkbox
+                        onChange={this.handleLoopChange}
+                        checked={this.props.loop}
+                    />
+                    <label>Loop&nbsp;&nbsp;</label>
+                </FormField>
 
-                    <td className="topAlign">
-                        <FormField>
-                            <Dropdown
-                                options={playbackRateOptions}
-                                onChange={this.handleRateChange}
-                                value={VideoPlaybackControls.currentPlaybackRate(this.props.rate)}
-                            />
-                            <label>Speed&nbsp;&nbsp;</label>
-                        </FormField>
-                    </td>
+                <FormField id="speed-dropdown">
+                    <Dropdown
+                        options={playbackRateOptions}
+                        onChange={this.handleRateChange}
+                        value={VideoPlaybackControls.currentPlaybackRate(this.props.rate)}
+                    />
+                    <label>Speed&nbsp;&nbsp;</label>
+                </FormField>
 
-                    <td className="topAlign">
-                        <Button
-                            raised
-                            onClick={this.handlePlay}
-                        >
-                            Set
-                        </Button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                <Button
+                    raised
+                    onClick={this.handlePlay}
+                >
+                    Set
+                </Button>
+            </div>
         );
     }
 }
