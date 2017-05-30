@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
+import Button from 'react-mdc-web/lib/Button';
 import Checkbox from 'react-mdc-web/lib/Checkbox';
 import FormField from 'react-mdc-web/lib/FormField';
 
@@ -133,17 +134,15 @@ class VideoPlaybackControls extends Component {
                             />
                             <label>Speed&nbsp;&nbsp;</label>
                         </FormField>
-
                     </td>
 
                     <td className="topAlign">
-                        <form onSubmit={this.handlePlay}>
-                            <input
-                                className="button setPlayback"
-                                type="submit"
-                                value="Set"
-                            />
-                        </form>
+                        <Button
+                            raised
+                            onClick={this.handlePlay}
+                        >
+                            Set
+                        </Button>
                     </td>
                 </tr>
                 </tbody>

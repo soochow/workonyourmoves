@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-mdc-web/lib/Button';
 
 import './button.css';
 import './input.css';
@@ -36,13 +37,12 @@ class UrlInput extends Component {
                     </td>
 
                     <td>
-                        <form onSubmit={this.handleUrlSubmit}>
-                            <input
-                                className="button urlSubmit"
-                                type="submit"
-                                value="Load"
-                            />
-                        </form>
+                        <Button
+                            raised
+                            onClick={this.handleUrlSubmit}
+                        >
+                            Load
+                        </Button>
                     </td>
                 </tr>
                 </tbody>
