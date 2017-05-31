@@ -19,10 +19,7 @@ class App extends Component {
             selectedEndTime: '',
 
             enteredLoop: false,
-            selectedLoop: false,
-
             enteredRate: 1.0,
-            selectedRate: 1.0,
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
@@ -75,8 +72,6 @@ class App extends Component {
         this.setState({
             selectedStartTime: this.state.enteredStartTime,
             selectedEndTime: this.state.enteredEndTime,
-            selectedLoop: this.state.enteredLoop,
-            selectedRate: this.state.enteredRate
         })
     }
 
@@ -97,8 +92,8 @@ class App extends Component {
                     url={this.state.selectedUrl}
                     start={this.state.selectedStartTime}
                     end={this.state.selectedEndTime}
-                    loop={this.state.selectedLoop}
-                    rate={this.state.selectedRate}
+                    loop={this.state.enteredLoop}
+                    rate={this.state.enteredRate}
                 />
 
                 <VideoPlaybackControls

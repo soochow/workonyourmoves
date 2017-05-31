@@ -20,6 +20,8 @@ class VideoContainer extends Component {
     }
 
     render() {
+        this.playerRate(this.props.rate);
+
         return (
             <YouTube
                 videoId={VideoContainer.parse(this.props.url)}
@@ -34,9 +36,7 @@ class VideoContainer extends Component {
                         rel: 0,
                         showinfo: 0,
                         start: VideoContainer.hmsToSeconds(this.props.start),
-                        end: VideoContainer.hmsToSeconds(this.props.end),
-                        loop: this.props.loop,
-                        playbackRate: this.props.rate
+                        end: VideoContainer.hmsToSeconds(this.props.end)
                     }
                 }}
                 onReady={this.onPlayerReady}
@@ -46,17 +46,25 @@ class VideoContainer extends Component {
     }
 
     onPlayerReady(event) {
-        let player = event.target;
+        this.player = event.target;
 
-        player.setPlaybackRate(this.props.rate);
+        this.player.setPlaybackRate(this.props.rate);
     }
 
     onPlayerStateChange(event) {
+        this.player = event.target;
         let playerStatus = event.data;
-        let player = event.target;
+
+        this.player.setPlaybackRate(this.props.rate);
 
         if (playerStatus === 0 && this.props.loop === true) { // ended
-            player.seekTo(VideoContainer.hmsToSeconds(this.props.start), true);
+            this.player.seekTo(VideoContainer.hmsToSeconds(this.props.start), true);
+        }
+    }
+
+    playerRate(rate) {
+        if (typeof this.player !== "undefined") {
+            this.player.setPlaybackRate(rate);
         }
     }
 
