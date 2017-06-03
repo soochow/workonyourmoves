@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Textfield } from 'react-mdc-web';
 
 class UrlInput extends Component {
@@ -37,5 +38,11 @@ class UrlInput extends Component {
         );
     }
 }
+
+UrlInput.propTypes = {
+    url: PropTypes.string.isRequired,
+    onUrlInputChange: PropTypes.func.isRequired,
+    onUrlSelected: PropTypes.func.isRequired
+};
 
 export default UrlInput;

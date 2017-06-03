@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import YouTube from 'react-youtube';
 
 class VideoContainer extends Component {
@@ -91,5 +92,13 @@ class VideoContainer extends Component {
         return s;
     }
 }
+
+VideoContainer.propTypes = {
+    url: PropTypes.string.isRequired,
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+    loop: PropTypes.bool.isRequired,
+    rate: PropTypes.number.isRequired
+};
 
 export default VideoContainer;

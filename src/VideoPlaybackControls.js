@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { Button, Checkbox, FormField, Textfield } from 'react-mdc-web';
 import { Menu, MenuItem } from 'react-mdl-extra';
 
@@ -122,5 +123,18 @@ class VideoPlaybackControls extends Component {
         );
     }
 }
+
+VideoPlaybackControls.propTypes = {
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+    loop: PropTypes.bool.isRequired,
+    rate: PropTypes.number.isRequired,
+
+    onStartInputChange: PropTypes.func.isRequired,
+    onEndInputChange: PropTypes.func.isRequired,
+    onLoopInputChange: PropTypes.func.isRequired,
+    onRateInputChange: PropTypes.func.isRequired,
+    onPlay: PropTypes.func.isRequired
+};
 
 export default VideoPlaybackControls;
