@@ -9,8 +9,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            enteredUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
-            selectedUrl: 'https://www.youtube.com/embed/6peHtgK0-tM',
+            enteredUrl: 'https://www.youtube.com/embed/hkJX4fC0w68',
+            selectedUrl: 'https://www.youtube.com/embed/hkJX4fC0w68',
 
             enteredStartTime: '',
             selectedStartTime: '',
