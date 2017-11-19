@@ -79,7 +79,7 @@ class App extends Component {
         return (
             <div className="App">
 
-               <img src="workonyourmoveslogo.png" alt="work on your moves logo"/>
+               <img className="AppLogo" src="workonyourmoveslogo.png" alt="work on your moves logo"/>
 
                 <UrlInput
                     url={this.state.enteredUrl}
