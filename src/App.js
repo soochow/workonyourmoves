@@ -78,9 +78,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <h2>Work On Your Moves</h2>
-                </div>
+
+               <img src="workonyourmoveslogo.png" alt="work on your moves logo"/>
 
                 <UrlInput
                     url={this.state.enteredUrl}
