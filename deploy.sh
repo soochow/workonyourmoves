@@ -10,5 +10,5 @@ touch build/Staticfile
 
 # deploy to cf
 pushd build/
-cf push -b staticfile_buildpack workonyourmoves
+cf push -b staticfile_buildpack workonyourmoves --random-route
 popd
