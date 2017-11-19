@@ -79,7 +79,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <h2>Learn from YouTube</h2>
+                    <h2>Work On Your Moves</h2>
                 </div>
 
                 <UrlInput
