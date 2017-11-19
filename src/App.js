@@ -4,6 +4,7 @@ import VideoContainer from './VideoContainer';
 import VideoPlaybackControls from "./VideoPlaybackControls";
 
 import './App.css';
+import SocialLinks from "./SocialLinks";
 
 class App extends Component {
     constructor(props) {
@@ -107,6 +108,8 @@ class App extends Component {
                     onRateInputChange={this.handleRateChange}
                     onPlay={this.handlePlay}
                 />
+
+                <SocialLinks/>
             </div>
         );
     }
