@@ -32,7 +32,7 @@ class UrlInput extends Component {
                     raised
                     onClick={this.handleUrlSubmit}
                 >
-                    Load
+                    Load Video
                 </Button>
             </div>
         );

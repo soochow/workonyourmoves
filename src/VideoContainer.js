@@ -13,7 +13,7 @@ class VideoContainer extends Component {
     }
 
     updateHeight() {
-        this.setState({ height: window.innerHeight - 220 + 'px' });
+        this.setState({ height: window.innerHeight - 295 + 'px' });
     }
 
     componentWillMount() {
