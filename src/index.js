@@ -5,7 +5,7 @@ import App from './App';
 import 'material-components-web/dist/material-components-web.min.css';
 import './index.css';
 
-document.title = "Work On Your Moves!";
+document.title = "work on your moves!";
 
 ReactDOM.render(
   <App />,

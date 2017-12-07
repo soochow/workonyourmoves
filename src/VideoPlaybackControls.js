@@ -9,6 +9,7 @@ import './VideoPlaybackControls.css';
 const playbackRateOptions = [
     {value: 0.25, label: '.25x'},
     {value: 0.5, label: '.5x'},
+    {value: 0.75, label: '.75x'},
     {value: 1.0, label: '1x'},
     {value: 2.0, label: '2.x'}
 ];
@@ -112,6 +113,7 @@ class VideoPlaybackControls extends Component {
                 >
                     <MenuItem onClick={() => this.props.onRateInputChange(0.25)}>.25x</MenuItem>
                     <MenuItem onClick={() => this.props.onRateInputChange(0.5)}>.5x</MenuItem>
+                    <MenuItem onClick={() => this.props.onRateInputChange(0.75)}>.75x</MenuItem>
                     <MenuItem onClick={() => this.props.onRateInputChange(1.0)}>1.0x</MenuItem>
                     <MenuItem onClick={() => this.props.onRateInputChange(2.0)}>2.0x</MenuItem>
                 </Menu>&nbsp;&nbsp;&nbsp;
