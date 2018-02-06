@@ -10,17 +10,17 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            enteredUrl: 'https://youtu.be/MKZpPew3G2E',
-            selectedUrl: 'https://youtu.be/MKZpPew3G2E',
+            enteredUrl: 'https://youtu.be/w8lZGRxSzzU',
+            selectedUrl: 'https://youtu.be/w8lZGRxSzzU',
 
-            enteredStartTime: '0:36',
-            selectedStartTime: '0:36',
+            enteredStartTime: '0:20',
+            selectedStartTime: '0:20',
 
-            enteredEndTime: '0:41',
-            selectedEndTime: '0:41',
+            enteredEndTime: '0:52',
+            selectedEndTime: '0:52',
 
             enteredLoop: true,
-            enteredRate: 0.75,
+            enteredRate: .75,
         };
 
         this.handleUrlInput = this.handleUrlInput.bind(this);
